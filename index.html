@@ -224,7 +224,7 @@ layout: project
     Yuxuan Fan<sup>1</sup>, Gyusik Seo<sup>1</sup>, Jing Hao<sup>4</sup>,
     <strong>Jaemin Cho</strong><sup>3</sup>,
     <strong>Mohit Bansal</strong><sup>2</sup>,
-    <strong>Jaehong Yoon</strong><sup>1*</sup>
+    <strong>Jaehong Yoon</strong><sup>1&dagger;</sup>
   </div>
   <div class="affiliations">
     <sup>1</sup>NTU Singapore &nbsp;&middot;&nbsp;
@@ -233,10 +233,8 @@ layout: project
     <sup>4</sup>The University of Hong Kong
   </div>
   <div class="buttons">
-    <a href="#">Paper</a>
-    <a href="#">Code</a>
-    <a href="#">Dataset</a>
-    <a href="#">Leaderboard</a>
+    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-3px;margin-right:4px"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Paper</a>
+    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 120 120" fill="currentColor" style="vertical-align:-3px;margin-right:4px"><path d="M38.5 19.7c-2.7 0-5 1.6-6 4L17 63.4H0v37.4c0 5.5 4.5 10 10 10h100c5.5 0 10-4.5 10-10V63.4h-17L87.5 23.7c-1-2.4-3.3-4-6-4-3.4 0-6.2 2.8-6.2 6.2 0 .8.2 1.6.4 2.3l12.7 35.2H31.6L44.3 28.2c.3-.7.4-1.5.4-2.3 0-3.4-2.8-6.2-6.2-6.2z"/></svg>HuggingFace</a>
   </div>
 </div>
 
@@ -281,236 +279,58 @@ layout: project
 <!-- ===== RESULTS ===== -->
 <div class="section">
   <h2>Results</h2>
-  <p>Zero-shot evaluation across 28 MLLMs. ACC = Accuracy, CAA = Category-Averaged Accuracy, EM = Exact Match.</p>
+  <p>Zero-shot evaluation across 28 MLLMs. ACC = Accuracy (%), CAA = Chance-Adjusted Accuracy (%), EM = Exact Match (%). Per-category CAA shown for single-select questions.</p>
   <div class="results-table-wrapper">
     <table class="results-table">
       <thead>
         <tr>
           <th>Model</th>
-          <th>Modality</th>
           <th>ACC</th>
           <th>CAA</th>
           <th>EM</th>
+          <th>Cin.</th>
+          <th>SVA</th>
+          <th>SPA</th>
+          <th>Game</th>
         </tr>
       </thead>
       <tbody>
-        <!-- Human -->
         <tr class="human-row">
-          <td>Human Expert</td>
-          <td>V+A+T</td>
-          <td>87.18</td>
-          <td>90.98</td>
-          <td>78.00</td>
+          <td>Human Expert</td><td>87.18</td><td>90.98</td><td>78.00</td><td>98.74</td><td>90.13</td><td>89.42</td><td>86.15</td>
         </tr>
-        <!-- Proprietary -->
-        <tr class="section-header"><td colspan="5">Proprietary Models</td></tr>
-        <tr class="best-row">
-          <td>Claude-4.6-Opus</td>
-          <td>V+T</td>
-          <td><strong>48.29</strong></td>
-          <td>55.13</td>
-          <td><strong>28.91</strong></td>
-        </tr>
-        <tr>
-          <td>Qwen-3.5-Plus</td>
-          <td>V+T</td>
-          <td>47.27</td>
-          <td><strong>58.52</strong></td>
-          <td>23.21</td>
-        </tr>
-        <tr>
-          <td>Doubao-Seed</td>
-          <td>V+A+T</td>
-          <td>46.11</td>
-          <td>55.00</td>
-          <td>24.22</td>
-        </tr>
-        <tr>
-          <td>GPT-5.4</td>
-          <td>V+A+T</td>
-          <td>44.58</td>
-          <td>50.28</td>
-          <td>25.50</td>
-        </tr>
-        <tr>
-          <td>Gemini-3.1-Pro</td>
-          <td>V+A+T</td>
-          <td>36.89</td>
-          <td>43.77</td>
-          <td>14.88</td>
-        </tr>
-        <tr>
-          <td>Grok-4.1</td>
-          <td>V+A+T</td>
-          <td>20.54</td>
-          <td>13.71</td>
-          <td>8.00</td>
-        </tr>
-        <tr>
-          <td>Kimi-K2.5</td>
-          <td>V+T</td>
-          <td>19.91</td>
-          <td>18.33</td>
-          <td>2.07</td>
-        </tr>
-        <tr>
-          <td>GLM-4.5v</td>
-          <td>V+T</td>
-          <td>17.13</td>
-          <td>5.43</td>
-          <td>8.61</td>
-        </tr>
-        <!-- Open Source General -->
-        <tr class="section-header"><td colspan="5">Open Source General Models</td></tr>
-        <tr>
-          <td>Qwen3.5-397B</td>
-          <td>V+T</td>
-          <td>44.76</td>
-          <td>53.42</td>
-          <td>22.71</td>
-        </tr>
-        <tr>
-          <td>InternVL3-78B</td>
-          <td>V+T</td>
-          <td>37.81</td>
-          <td>47.03</td>
-          <td>13.53</td>
-        </tr>
-        <tr>
-          <td>InternVL3-8B</td>
-          <td>V+T</td>
-          <td>33.07</td>
-          <td>29.49</td>
-          <td>20.30</td>
-        </tr>
-        <tr>
-          <td>Qwen2.5-Omni</td>
-          <td>V+A+T</td>
-          <td>32.70</td>
-          <td>30.71</td>
-          <td>18.18</td>
-        </tr>
-        <tr>
-          <td>MiniCPM-o</td>
-          <td>V+A+T</td>
-          <td>31.34</td>
-          <td>27.05</td>
-          <td>18.90</td>
-        </tr>
-        <tr>
-          <td>Gemma-4-E4B</td>
-          <td>V+A+T</td>
-          <td>27.61</td>
-          <td>28.67</td>
-          <td>9.06</td>
-        </tr>
-        <tr>
-          <td>LLaVA-OV-7B</td>
-          <td>V+T</td>
-          <td>20.41</td>
-          <td>21.24</td>
-          <td>0.50</td>
-        </tr>
-        <!-- Video-Specific -->
-        <tr class="section-header"><td colspan="5">Video-Specific Models</td></tr>
-        <tr>
-          <td>VideoLLaMA3</td>
-          <td>V+A+T</td>
-          <td>27.18</td>
-          <td>26.82</td>
-          <td>9.90</td>
-        </tr>
-        <tr>
-          <td>Video-R1</td>
-          <td>V+T</td>
-          <td>26.73</td>
-          <td>28.41</td>
-          <td>7.21</td>
-        </tr>
-        <tr>
-          <td>VideoRFT</td>
-          <td>V+T</td>
-          <td>26.13</td>
-          <td>26.17</td>
-          <td>8.17</td>
-        </tr>
-        <tr>
-          <td>VideoChat-R1</td>
-          <td>V+T</td>
-          <td>26.08</td>
-          <td>26.49</td>
-          <td>7.77</td>
-        </tr>
-        <tr>
-          <td>Video-XL-2</td>
-          <td>V+T</td>
-          <td>24.17</td>
-          <td>29.91</td>
-          <td>0.11</td>
-        </tr>
-        <tr>
-          <td>VideoLLaMA2</td>
-          <td>V+A+T</td>
-          <td>20.34</td>
-          <td>20.07</td>
-          <td>1.17</td>
-        </tr>
-        <tr>
-          <td>LongVT</td>
-          <td>V+T</td>
-          <td>20.51</td>
-          <td>17.14</td>
-          <td>4.64</td>
-        </tr>
-        <tr>
-          <td>AKS</td>
-          <td>V+T</td>
-          <td>19.31</td>
-          <td>18.99</td>
-          <td>0.00</td>
-        </tr>
-        <tr>
-          <td>Q-Frame</td>
-          <td>V+T</td>
-          <td>18.76</td>
-          <td>9.65</td>
-          <td>8.05</td>
-        </tr>
-        <tr>
-          <td>VideoChat2</td>
-          <td>V+T</td>
-          <td>17.78</td>
-          <td>15.27</td>
-          <td>0.34</td>
-        </tr>
-        <tr>
-          <td>Video-CCAM</td>
-          <td>V+T</td>
-          <td>17.53</td>
-          <td>15.10</td>
-          <td>0.00</td>
-        </tr>
-        <tr>
-          <td>LongVU</td>
-          <td>V+T</td>
-          <td>14.87</td>
-          <td>8.21</td>
-          <td>1.01</td>
-        </tr>
-        <tr>
-          <td>TimeChat</td>
-          <td>V+T</td>
-          <td>14.42</td>
-          <td>7.79</td>
-          <td>0.34</td>
-        </tr>
-        <!-- Random -->
+        <tr class="section-header"><td colspan="8">Proprietary MLLMs</td></tr>
+        <tr class="best-row"><td><strong>Claude-4.6-Opus</strong></td><td><strong>48.29</strong></td><td>55.13</td><td><strong>28.91</strong></td><td>63.26</td><td>58.51</td><td>62.65</td><td>34.07</td></tr>
+        <tr><td>Qwen-3.5-Plus</td><td>47.27</td><td><strong>58.52</strong></td><td>23.21</td><td>68.88</td><td>64.36</td><td>60.69</td><td>38.80</td></tr>
+        <tr><td>Doubao-Seed</td><td>46.11</td><td>55.00</td><td>24.22</td><td>62.10</td><td>65.63</td><td>56.84</td><td>32.86</td></tr>
+        <tr><td>GPT-5.4</td><td>44.58</td><td>50.28</td><td>25.50</td><td>56.50</td><td>54.24</td><td>56.43</td><td>32.00</td></tr>
+        <tr><td>Gemini-3.1-Pro</td><td>36.89</td><td>43.77</td><td>14.88</td><td>43.16</td><td>42.70</td><td>49.50</td><td>38.72</td></tr>
+        <tr><td>Grok-4.1</td><td>20.54</td><td>13.71</td><td>8.00</td><td>14.19</td><td>19.70</td><td>15.90</td><td>3.20</td></tr>
+        <tr><td>Kimi-K2.5</td><td>19.91</td><td>18.33</td><td>2.07</td><td>23.06</td><td>24.05</td><td>23.62</td><td>0.35</td></tr>
+        <tr><td>GLM-4.5v</td><td>17.13</td><td>5.43</td><td>8.61</td><td>16.17</td><td>-2.97</td><td>13.60</td><td>-4.34</td></tr>
+        <tr class="section-header"><td colspan="8">Open Source General-Purpose MLLMs</td></tr>
+        <tr><td>Qwen3.5-397B</td><td>44.76</td><td>53.42</td><td>22.71</td><td>62.65</td><td>57.45</td><td>56.60</td><td>35.79</td></tr>
+        <tr><td>InternVL3-78B</td><td>37.81</td><td>47.03</td><td>13.53</td><td>47.98</td><td>48.79</td><td>57.25</td><td>31.59</td></tr>
+        <tr><td>InternVL3-8B</td><td>33.07</td><td>29.49</td><td>20.30</td><td>43.41</td><td>36.23</td><td>30.48</td><td>6.66</td></tr>
+        <tr><td>Qwen2.5-Omni</td><td>32.70</td><td>30.71</td><td>18.18</td><td>36.47</td><td>40.76</td><td>34.43</td><td>8.31</td></tr>
+        <tr><td>MiniCPM-o</td><td>31.34</td><td>27.05</td><td>18.90</td><td>35.72</td><td>32.92</td><td>31.49</td><td>6.14</td></tr>
+        <tr><td>Gemma-4-E4B</td><td>27.61</td><td>28.67</td><td>9.06</td><td>39.40</td><td>32.55</td><td>31.44</td><td>10.30</td></tr>
+        <tr><td>LLaVA-OV-7B</td><td>20.41</td><td>21.24</td><td>0.50</td><td>22.01</td><td>25.77</td><td>25.09</td><td>10.24</td></tr>
+        <tr class="section-header"><td colspan="8">Open Source Video-Specific MLLMs</td></tr>
+        <tr><td>VideoLLaMA3</td><td>27.18</td><td>26.82</td><td>9.90</td><td>34.37</td><td>24.55</td><td>33.76</td><td>14.02</td></tr>
+        <tr><td>Video-R1</td><td>26.73</td><td>28.41</td><td>7.21</td><td>30.50</td><td>28.70</td><td>38.49</td><td>13.87</td></tr>
+        <tr><td>VideoRFT</td><td>26.13</td><td>26.17</td><td>8.17</td><td>26.50</td><td>30.14</td><td>36.04</td><td>9.01</td></tr>
+        <tr><td>VideoChat-R1</td><td>26.08</td><td>26.49</td><td>7.77</td><td>35.87</td><td>29.05</td><td>33.04</td><td>6.46</td></tr>
+        <tr><td>Video-XL-2</td><td>24.17</td><td>29.91</td><td>0.11</td><td>28.63</td><td>29.29</td><td>40.42</td><td>19.17</td></tr>
+        <tr><td>LongVT</td><td>20.51</td><td>17.14</td><td>4.64</td><td>17.99</td><td>21.61</td><td>21.92</td><td>5.02</td></tr>
+        <tr><td>VideoLLaMA2</td><td>20.34</td><td>20.07</td><td>1.17</td><td>31.35</td><td>18.07</td><td>25.34</td><td>5.40</td></tr>
+        <tr><td>AKS</td><td>19.31</td><td>18.99</td><td>0.00</td><td>17.61</td><td>21.46</td><td>28.01</td><td>6.34</td></tr>
+        <tr><td>Q-Frame</td><td>18.76</td><td>9.65</td><td>8.05</td><td>13.81</td><td>13.83</td><td>3.30</td><td>8.19</td></tr>
+        <tr><td>VideoChat2</td><td>17.78</td><td>15.27</td><td>0.34</td><td>17.20</td><td>14.35</td><td>18.67</td><td>10.45</td></tr>
+        <tr><td>Video-CCAM</td><td>17.53</td><td>15.10</td><td>0.00</td><td>23.38</td><td>18.31</td><td>16.92</td><td>1.05</td></tr>
+        <tr><td>LongVU</td><td>14.87</td><td>8.21</td><td>1.01</td><td>14.40</td><td>6.50</td><td>5.46</td><td>7.75</td></tr>
+        <tr><td>TimeChat</td><td>14.42</td><td>7.79</td><td>0.34</td><td>12.27</td><td>9.66</td><td>4.61</td><td>5.04</td></tr>
         <tr class="random-row">
-          <td>Random Baseline</td>
-          <td>-</td>
-          <td>13.55</td>
-          <td>0.02</td>
-          <td>6.04</td>
+          <td>Random</td><td>13.55</td><td>0.02</td><td>6.04</td><td>0.04</td><td>-0.04</td><td>0.02</td><td>0.06</td>
         </tr>
       </tbody>
     </table>

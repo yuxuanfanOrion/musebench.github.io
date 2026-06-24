@@ -1,7 +1,8 @@
 name: "MuseBench"
 description: "Benchmarking Intent-Level Audiovisual Arts Understanding in MLLMs"
 
-url: https://yuxuanfanorion.github.io/musebench.github.io
+url: https://yuxuanfanorion.github.io
+baseurl: /musebench.github.io
 
 navigation:
   - name: Home
